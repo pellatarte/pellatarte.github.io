@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio BUT Informatique — Ella Mahieu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=JetBrains+Mono&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --lilas: #9A89C3;
+            --violet: #8B78B5;
+            --fond: #F0EDF4;
+            --bulle: #B4DADF;
+            --encre: #2E2352;
+            --douce: #65548E;
+            --nuit: #060C26;
+            --serif: "Cormorant Garamond", Georgia, serif;
+            --sans: Poppins, system-ui, sans-serif
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--fond);
+            color: var(--encre);
+            font: 400 1rem/1.55 var(--sans)
+        }
+
+        a {
+            color: inherit
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--violet);
+            outline-offset: 3px
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #A090C8, #8A76B6);
+            color: #fff;
+            padding: 3.5rem 1.5rem 4.5rem;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -7rem;
+            top: -9rem;
+            width: 24rem;
+            height: 24rem;
+            border-radius: 50%;
+            background: var(--violet);
+            opacity: .75
+        }
+
+        .hero>* {
+            position: relative;
+            z-index: 1;
+            max-width: 60rem;
+            margin-inline: auto
+        }
+
+        .hero p {
+            margin: 0 auto;
+            font-size: 1.05rem
+        }
+
+        h1 {
+            font: 500 clamp(3rem, 10vw, 6.5rem)/.95 var(--serif);
+            margin: .4rem auto .8rem;
+            letter-spacing: -.01em
+        }
+
+        .legende {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            margin-top: 1.4rem !important
+        }
+
+        .legende span {
+            background: var(--bulle);
+            color: var(--encre);
+            padding: .2rem .9rem;
+            border-radius: 1rem;
+            font-size: .9rem
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            background: var(--fond);
+            padding: .7rem 1rem;
+            display: flex;
+            gap: .5rem;
+            overflow-x: auto;
+            justify-content: center;
+            border-bottom: 1px solid #DDD6EA
+        }
+
+        nav a {
+            white-space: nowrap;
+            text-decoration: none;
+            background: #fff;
+            padding: .35rem .9rem;
+            border-radius: 1rem;
+            font-size: .9rem
+        }
+
+        nav a:hover {
+            background: var(--bulle)
+        }
+
+        main {
+            max-width: 70rem;
+            margin: 0 auto;
+            padding: 2rem 1rem 3rem
+        }
+
+        section {
+            margin-top: 3.5rem;
+            scroll-margin-top: 4rem
+        }
+
+        .band {
+            background: linear-gradient(135deg, #A090C8, #8A76B6);
+            color: #fff;
+            border-radius: 1.5rem;
+            padding: 1.6rem;
+            position: relative;
+            overflow: hidden
+        }
+
+        .band .txt {
+            padding-right: 14rem
+        }
+
+        .mini {
+            margin: 0;
+            font: 500 1.15rem var(--serif)
+        }
+
+        h2 {
+            font: 500 clamp(2.6rem, 7vw, 4.6rem)/1 var(--serif);
+            margin: .1rem 0 .6rem
+        }
+
+        .nom {
+            display: inline-block;
+            background: #fff;
+            color: var(--douce);
+            padding: .2rem .9rem;
+            border-radius: .7rem;
+            font: 500 1.5rem var(--serif);
+            margin: 0 0 .8rem;
+            text-decoration: underline
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, .92);
+            color: var(--encre);
+            padding: .5rem 1rem;
+            border-radius: .8rem;
+            margin: .4rem 0 0;
+            font: 500 1.15rem/1.3 var(--serif);
+            text-decoration: underline;
+            text-decoration-thickness: 1px
+        }
+
+        .pill b {
+            color: var(--violet);
+            font-weight: 400;
+            margin-right: .6rem;
+            text-decoration: none;
+            display: inline-block
+        }
+
+        .auto {
+            position: absolute;
+            right: -3.5rem;
+            top: -4.5rem;
+            width: 16rem;
+            height: 16rem;
+            border-radius: 50%;
+            background: var(--violet);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            padding: 0 4.5rem 2.8rem 1rem
+        }
+
+        .auto p {
+            margin: 0;
+            font-size: .85rem;
+            text-decoration: underline
+        }
+
+        .auto strong {
+            font: 500 3.2rem/1 var(--serif)
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 27rem), 1fr));
+            gap: 2.2rem 1.5rem;
+            margin-top: 1.8rem
+        }
+
+        .card {
+            display: grid;
+            gap: .8rem;
+            align-content: start
+        }
+
+        .tete {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: .6rem
+        }
+
+        .titre {
+            background: #fff;
+            padding: .3rem 1rem;
+            border-radius: .8rem;
+            font: 500 clamp(1.5rem, 3vw, 2rem)/1.15 var(--serif);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            margin: 0
+        }
+
+        .note {
+            background: var(--bulle);
+            padding: .4rem 1.5rem;
+            border-radius: 48% 52% 45% 55%/58% 42% 58% 42%;
+            font: 500 1.6rem var(--serif);
+            white-space: nowrap
+        }
+
+        .shot {
+            background: var(--nuit);
+            border-radius: .9rem;
+            min-height: 11rem;
+            display: grid;
+            place-items: center;
+            color: #8EA0D8;
+            font: .8rem var(--mono, "JetBrains Mono", monospace);
+            overflow: hidden
+        }
+
+        .shot img {
+            width: 100%;
+            display: block
+        }
+
+        .cap {
+            background: var(--bulle);
+            padding: .5rem 1rem;
+            border-radius: .8rem;
+            font: 500 1.05rem/1.4 var(--sans);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            margin: 0;
+            justify-self: start
+        }
+
+        .card ul {
+            margin: 0;
+            padding-left: 1.3rem;
+            color: var(--douce)
+        }
+
+        .card li::marker {
+            color: var(--lilas)
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem 3rem;
+            color: var(--douce);
+            font-size: .9rem
+        }
+
+        @media(max-width:700px) {
+            .band .txt {
+                padding-right: 0
+            }
+
+            .auto {
+                position: static;
+                width: auto;
+                height: auto;
+                border-radius: 1rem;
+                margin-top: 1.1rem;
+                padding: .8rem 1rem;
+                align-items: flex-start;
+                text-align: left
+            }
+
+            .auto strong {
+                font-size: 2.4rem
+            }
+        }
+
+        .about,
+        .analyse {
+            background: #fff;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.4rem;
+            margin-top: 2rem
+        }
+
+        .about h2,
+        .analyse h3 {
+            font: 500 1.9rem/1.1 var(--serif);
+            margin: 0 0 .5rem;
+            text-decoration: underline;
+            text-decoration-thickness: 1px
+        }
+
+        .zone {
+            display: block;
+            margin: 0;
+            white-space: pre-wrap;
+            min-height: 1.6em;
+            max-width: 70ch
+        }
+
+        .card .zone {
+            background: #fff;
+            border-radius: .8rem;
+            padding: .6rem .9rem
+        }
+
+        .note {
+            min-width: 5rem;
+            text-align: center
+        }
+
+        .shot {
+            position: relative
+        }
+
+        .tools {
+            position: absolute;
+            right: .5rem;
+            bottom: .5rem;
+            display: flex;
+            gap: .4rem
+        }
+
+        [contenteditable]:empty::before {
+            content: attr(data-ph);
+            opacity: .55
+        }
+
+        .ed [contenteditable] {
+            outline: 1px dashed var(--violet);
+            outline-offset: 2px;
+            border-radius: .3rem;
+            cursor: text
+        }
+
+        .ed [contenteditable]:focus {
+            background: rgba(180, 218, 223, .4);
+            outline-style: solid
+        }
+
+        .mini-btn {
+            font: 500 .8rem var(--sans);
+            background: #fff;
+            color: var(--encre);
+            border: 1px solid var(--violet);
+            border-radius: .6rem;
+            padding: .2rem .7rem;
+            cursor: pointer;
+            justify-self: start
+        }
+
+        .mini-btn.danger {
+            justify-self: end
+        }
+
+        .mini-btn.add {
+            margin-top: 1.4rem
+        }
+
+        .card li .mini-btn {
+            margin-left: .4rem;
+            padding: 0 .45rem
+        }
+
+        .help {
+            background: var(--bulle);
+            border-radius: .8rem;
+            padding: .7rem 1rem;
+            margin: 0
+        }
+
+        .bar {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            z-index: 9;
+            background: var(--encre);
+            color: #fff;
+            padding: .6rem .9rem;
+            border-radius: 1rem;
+            display: flex;
+            gap: .6rem;
+            align-items: center;
+            font-size: .85rem;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, .3)
+        }
+
+        .bar button {
+            font: inherit;
+            background: #fff;
+            color: var(--encre);
+            border: 0;
+            border-radius: .6rem;
+            padding: .3rem .7rem;
+            cursor: pointer
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <p>MAHIEU Ella</p>
+        <h1>Portfolio BUT Informatique</h1>
+        <p id="intro"></p>
+        <p class="legende" aria-label="Échelle d’auto-évaluation">
+            <span>Peu</span><span>Assez</span><span>Bien</span><span>Très bien</span></p>
+    </header>
+    <nav id="nav" aria-label="Compétences"></nav>
+    <main id="app"></main>
+    <footer>MAHIEU Ella – BUT1 – Portfolio</footer>
+    <script>
+        const D = [
+            {
+                n: 1, court: "Réaliser", nom: "Réaliser un développement d’application", ac: "J’ai appris et suis à même de réaliser un développement informatique car :", ce: "J’ai agi et réalisé un développement d’application :", auto: "Assez", t: [
+                    { t: "SAE Jeu Textuel", r: "Assez", c: "j’ai implémenté des conceptions simples :", b: ["en expliquant et communiquant l’avancée aux clients et aux utilisateurs.", "en appliquant les principes algorithmiques."] },
+                    { t: "Site Chats Responsive", r: "Bien", c: "j’ai fait des essais, évalué leurs résultats en fonction des spécifications :", b: ["en précisant et en respectant les besoins décrits par le client.", "en veillant à la qualité du code et à sa documentation."] },
+                    { t: "SAE Graphes/IHM", r: "Assez", c: "j’ai développé des interfaces utilisateur :", b: ["en choisissant les ressources techniques appropriées."] },
+                    { t: "Site Chats Basique", r: "Bien", c: "j’ai élaboré des conceptions simples :", b: ["en respectant la législation, les normes pro. et les enjeux sociétaux."] }]
+            },
+            {
+                n: 2, court: "Optimiser", nom: "Optimiser des applications", ac: "J’ai appris et suis à même de construire des algorithmes car :", ce: "J’ai appréhendé et construit des algorithmes :", auto: "Assez", t: [
+                    { t: "SAE Jeu Textuel", r: "Assez", c: "j’ai analysé un problème avec méthode :", b: ["en formalisant et modélisant des situations complexes."] },
+                    { t: "TP Tri R1-01", r: "Assez", c: "j’ai comparé des algorithmes pour des problèmes classiques :", b: ["en recensant les algorithmes et structures de données usuels."] },
+                    { t: "TP R2-09", r: "Peu", c: "j’ai formalisé et mis en œuvre des outils mathématiques pour l’informatique :", b: ["en s’appuyant sur des schémas de raisonnement."] },
+                    { t: "TP Bas Niveau", r: "Peu", c: "j’ai expérimenté la notion de compilation et les représentations du bas niveau de données :", b: ["en justifiant mes choix et en validant les résultats."] }]
+            },
+            {
+                n: 3, court: "Administrer", nom: "Administrer des systèmes informatiques communicants et complexes", ac: "J’ai appris et suis à même de configurer un poste informatique car :", ce: "J’ai installé et configuré un poste de travail :", auto: "Bien", t: [
+                    { t: "Perso/Archi", r: "Bien", c: "j’ai identifié les différents composants d’un système numérique.", b: [] },
+                    { t: "Archi R1-03/Utilisation quot.", r: "Bien", c: "j’ai utilisé les fonctionnalités de base d’un système multitâche/multiutilisateurs :", b: ["en précisant et en respectant les besoins décrits par le client."] },
+                    { t: "Install. S1", r: "Bien", c: "j’ai installé et configuré un système d’exploitation et des outils de développement :", b: ["en appliquant les obligations légales et les bonnes pratiques de sécurité."] },
+                    { t: "SAE Serveur", r: "Bien", c: "j’ai configuré un poste de travail dans un réseau d’entreprise :", b: ["en sécurisant le système d’information.", "en offrant une qualité de service optimale.", "en assurant la continuité d’activité."] }]
+            },
+            {
+                n: 4, court: "Gérer", nom: "Gérer des données de l’information", ac: "J’ai appris et suis à même de réaliser un développement d’application informatique simple car :", ce: "J’ai conçu et mis en place une BDD à partir d’un cahier des charges client :", auto: "Bien +", t: [
+                    { t: "R1-05/R2-06", r: "Très Bien", c: "j’ai mis à jour et interrogé une base de données relationnelle :", b: ["en s’appuyant sur des bases mathématiques."] },
+                    { t: "SAE BDD", r: "Bien", c: "j’ai visualisé des données :", b: ["en s’appuyant sur des bases mathématiques.", "en assurant la cohérence et la qualité."] },
+                    { t: "SAE BDD (aussi)", r: "Bien", c: "j’ai conçu une base de données relationnelle à partir d’un cahier des charges :", b: ["en respectant les réglementations sur le respect de la vie privée et la protection des données personnelles.", "en respectant des enjeux économiques, sociétaux et écologiques de l’utilisation et du stockage des données, ainsi que des différentes infrastructures (datacenters, cloud, etc.)"] }]
+            },
+            {
+                n: 5, court: "Conduire", nom: "Conduire un projet", ac: "J’ai appris et suis à même d’identifier les besoins métiers des clients et des utilisateurs car :", ce: "J’ai identifié les besoins des clients et des utilisateurs :", auto: "Assez +", t: [
+                    { t: "SAE WEB Statique/IA", r: "Bien", c: "j’ai appréhendé les besoins du client et de l’utilisateur :", b: ["en adoptant une démarche proactive, créative et critique."] },
+                    { t: "R2-10 Gestion de projet", r: "Assez", c: "j’ai mis en place les outils de gestion de projet :", b: ["en communiquant efficacement avec les différents acteurs."] },
+                    { t: "R1-08 G.O. / R1-09 Éco. / R2-10 Gestion de projet / SAEs", r: "Bien", c: "j’ai identifié les acteurs et les différentes phases d’un cycle de développement :", b: ["en respectant les règles juridiques et les normes en vigueur.", "en sensibilisant à une gestion éthique, responsable, durable et interculturelle."] }]
+            },
+            {
+                n: 6, court: "Collaborer", nom: "Collaborer au sein d’une équipe informatique", ac: "J’ai appris et suis à même d’identifier les aptitudes pour travailler dans une équipe informatique car :", ce: "J’ai identifié mes aptitudes pour travailler dans une équipe informatique", auto: "Bien +", t: [
+                    { t: "PPP/domaines touchés", r: "Bien", c: "j’ai appréhendé l’écosystème numérique :", b: ["en accompagnant la mise en œuvre des évolutions informatiques.", "en veillant au respect des contraintes juridiques."] },
+                    { t: "Recherche d’alternance", r: "Bien", c: "j’ai découvert les aptitudes requises selon les différents métiers informatiques :", b: ["en inscrivant sa démarche dans une équipe pluridisciplinaire."] },
+                    { t: "G.O./Entretiens/SAE Graphes", r: "Bien", c: "j’ai identifié les statuts, les fonctions et les rôles de chaque membre d’une équipe pluridisciplinaire :", b: ["en développant une communication efficace et collaborative."] },
+                    { t: "Communication/GIT", r: "Bien", c: "j’ai acquis les compétences interpersonnelles pour travailler en équipe", b: [] }]
+            }
+        ];
+        const esc = s => String(s).replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+        let S = { m: { intro: "Première année : six compétences, mes traces et mon auto-évaluation pour chacune.", apropos: "" }, d: D };
+        const ED = location.search.includes("edit"), K = "portfolio-ella", $ = s => document.querySelector(s);
+        const ls = () => { try { return localStorage.getItem(K) } catch (e) { return null } };
+        const save = () => { try { localStorage.setItem(K, JSON.stringify(S)) } catch (e) { alert("Mémoire du navigateur pleine : exporte content.json pour ne rien perdre.") } };
+        const at = (p, v) => { const k = p.split("."), l = k.pop(); let o = S; k.forEach(i => o = o[i]); return v === undefined ? o[l] : (o[l] = v) };
+        const T = (p, ph, tag, cls) => `<${tag} class="${cls || ""}" data-p="${p}" data-ph="${ph}"${ED ? ' contenteditable="plaintext-only"' : ""}>${esc(at(p) || "")}</${tag}>`;
+        const B = (a, p, l, c) => ED ? `<button type="button" class="mini-btn ${c || ""}" data-a="${a}" data-p="${p}">${l}</button>` : "";
+        function draw() {
+            $("#intro").innerHTML = T("m.intro", "Ta phrase d’introduction", "span");
+            $("#nav").innerHTML = S.d.map(c => `<a href="#c${c.n}">C${c.n} · ${esc(c.court)}</a>`).join("");
+            $("#app").innerHTML = (ED ? `<p class="help">Clique sur n’importe quel texte pour le modifier. Tes changements restent dans ce navigateur. Quand tu as fini : « Exporter », puis remplace content.json dans ton dépôt GitHub.</p>` : "")
+                + (ED || S.m.apropos ? `<section class="about"><h2>À propos de moi</h2>${T("m.apropos", "Présente-toi : parcours, projet professionnel, ce que tu aimes faire…", "p", "zone")}</section>` : "")
+                + S.d.map((c, i) => {
+                    const P = `d.${i}`; return `
+<section id="c${c.n}" aria-labelledby="h${c.n}">
+<div class="band"><div class="txt">
+<p class="mini">MAHIEU Ella – BUT1 – Portfolio</p>
+<h2 id="h${c.n}">Compétence #${c.n}</h2>
+${T(P + ".nom", "Nom de la compétence", "p", "nom")}
+<p class="pill"><b>AC</b>${T(P + ".ac", "Apprentissage critique", "span")}</p>
+<p class="pill"><b>CE</b>${T(P + ".ce", "Composante essentielle", "span")}</p></div>
+<div class="auto"><p>Auto-évaluation globale :</p>${T(P + ".auto", "Niveau", "strong")}</div></div>
+<div class="grid">${c.t.map((x, j) => {
+                        const Q = `${P}.t.${j}`; return `
+<article class="card">${B("delc", Q, "Supprimer la trace", "danger")}
+<div class="tete">${T(Q + ".t", "Titre de la trace", "h3", "titre")}${T(Q + ".r", "Niveau", "span", "note")}</div>
+<div class="shot">${x.img ? `<img src="${x.img}" alt="Capture : ${esc(x.t)}">` : "capture à ajouter"}${ED ? `<div class="tools"><label class="mini-btn">${x.img ? "Changer" : "Ajouter une capture"}<input type="file" accept="image/*" hidden data-i="${Q}"></label>${x.img ? B("delimg", Q, "Retirer") : ""}</div>` : ""}</div>
+${T(Q + ".c", "j’ai … :", "p", "cap")}
+<ul>${(x.b || []).map((b, k) => `<li>${T(Q + ".b." + k, "en …", "span")}${B("delb", Q + ".b." + k, "✕")}</li>`).join("")}</ul>${B("addb", Q, "+ Ajouter un point")}
+${ED || x.com ? T(Q + ".com", "Commentaire libre : ce que j’ai appris, ce que je referais autrement…", "p", "zone") : ""}
+</article>`}).join("")}</div>
+${ED || c.an ? `<div class="analyse"><h3>Mon analyse</h3>${T(P + ".an", "Explique comment tu as développé cette compétence, avec des exemples précis…", "p", "zone")}</div>` : ""}
+${B("addc", P, "+ Ajouter une trace", "add")}
+</section>`}).join("");
+        }
+        document.addEventListener("input", e => { const p = e.target.dataset && e.target.dataset.p; if (ED && p && e.target.isContentEditable) { at(p, e.target.innerText); save() } });
+        document.addEventListener("keydown", e => { const t = e.target; if (e.key == "Enter" && t.dataset && t.dataset.p && !t.classList.contains("zone")) e.preventDefault() });
+        document.addEventListener("click", e => {
+            const b = e.target.closest("[data-a]"); if (!b) return; const a = b.dataset.a, p = b.dataset.p, k = p.split("."), i = +k.pop();
+            if (a == "delc" || a == "delb") { if (a == "delb" || confirm("Supprimer cette trace ?")) at(k.join(".")).splice(i, 1); else return }
+            else if (a == "addb") { const x = at(p); (x.b = x.b || []).push("") }
+            else if (a == "addc") at(p).t.push({ t: "", r: "", c: "", b: [] });
+            else if (a == "delimg") at(p).img = "";
+            save(); draw()
+        });
+        document.addEventListener("change", async e => {
+            const f = e.target.files && e.target.files[0], p = e.target.dataset.i; if (!f || !p) return;
+            const bm = await createImageBitmap(f), s = Math.min(1, 1100 / bm.width), c = document.createElement("canvas"), g = c.getContext("2d");
+            c.width = bm.width * s; c.height = bm.height * s; g.fillStyle = "#fff"; g.fillRect(0, 0, c.width, c.height); g.drawImage(bm, 0, 0, c.width, c.height);
+            at(p).img = c.toDataURL("image/jpeg", .82); save(); draw()
+        });
+        if (ED) {
+            document.body.classList.add("ed"); if (ls()) S = JSON.parse(ls());
+            document.body.insertAdjacentHTML("beforeend", `<div class="bar"><span>Mode édition</span><button id="ex">Exporter content.json</button><button id="rs">Réinitialiser</button></div>`);
+            $("#ex").onclick = () => { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(S, null, 1)], { type: "application/json" })); a.download = "content.json"; a.click() };
+            $("#rs").onclick = () => { if (confirm("Effacer tes modifications locales ?")) { localStorage.removeItem(K); location.reload() } }
+        }
+        draw();
+        if (!(ED && ls())) fetch("content.json").then(r => r.ok ? r.json() : Promise.reject()).then(j => { S = j; draw() }).catch(() => { });
+    </script>
+</body>
+
+</html>
