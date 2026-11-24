@@ -21,7 +21,7 @@ qui la prouvent (TP, SAÉ, projets), une justification de mon niveau et mon auto
 
 Le site est **statique** (HTML, CSS, JavaScript), sans framework, et hébergé avec **GitHub Pages**.
 
-## 🎯 Les 6 compétences
+## Les 6 compétences
 
 | # | Compétence | Auto-évaluation |
 | :-: | --- | :-: |
@@ -34,7 +34,7 @@ Le site est **statique** (HTML, CSS, JavaScript), sans framework, et hébergé a
 
 Échelle : ●○○○ Peu · ●●○○ Assez · ●●●○ Bien · ●●●● Très bien
 
-## 🗂️ Structure du dépôt
+## Structure du dépôt
 
 ```text
 ├── index.html     Structure de la page
@@ -45,28 +45,7 @@ Le site est **statique** (HTML, CSS, JavaScript), sans framework, et hébergé a
 └── assets/        Images du dépôt (bannière…)
 ```
 
-## ✏️ Modifier le contenu
-
-**Depuis le site (le plus simple)**
-1. Ouvre la page avec `?edit` à la fin de l’adresse :
-   `https://pellatarte.github.io/NOM-DU-DEPOT/?edit`
-2. Clique sur n’importe quel texte pour le modifier, ajoute des traces, des captures et tes justifications.
-3. Touche **Exporter content.json**, puis dépose ce fichier dans le dépôt (il remplace l’ancien).
-
-**À la main** : modifie `content.js` (les champs sont expliqués en tête du fichier).
-
-> Les modifications faites en mode édition restent dans le navigateur tant qu’elles ne sont pas exportées.
-
-## 🚀 Lancer en local
-
-Le chargement de `content.json` demande un petit serveur :
-
-```bash
-python3 -m http.server 8000
-# puis ouvrir http://localhost:8000
-```
-
-## 🎨 Direction artistique
+## Direction artistique
 
 | Couleur | Code | Usage |
 | --- | --- | --- |
@@ -78,7 +57,7 @@ python3 -m http.server 8000
 
 Polices : **Cormorant Garamond** (titres, soulignés) et **Poppins** (texte).
 
-## 📬 Contact
+## Contact
 
 **MAHIEU Ella** · [GitHub @pellatarte](https://github.com/pellatarte)
 
