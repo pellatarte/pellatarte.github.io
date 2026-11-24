@@ -65,7 +65,7 @@ function renderCompetence(c, i) {
   return `
   <section id="c${c.n}" aria-labelledby="h${c.n}">
     <div class="band"><div class="txt">
-      <p class="mini">MAHIEU Ella – BUT1 – Portfolio</p>
+      <p class="mini">MAHIEU Ella – BUT2 – Portfolio</p>
       <h2 id="h${c.n}">Compétence #${c.n}</h2>
       ${field(P + ".nom", "Nom de la compétence", "p", "nom")}
       <p class="pill"><b>AC</b>${field(P + ".ac", "Apprentissage critique")}</p>

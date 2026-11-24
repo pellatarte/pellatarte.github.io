@@ -19,7 +19,7 @@
    ========================================================================== */
 const DEFAULT_CONTENT = {
   m: {
-    intro: "Première année : six compétences, mes traces et mon auto-évaluation pour chacune.",
+    intro: "Deuxième année : six compétences, mes traces et mon auto-évaluation pour chacune.",
     apropos: ""
   },
   d: [
