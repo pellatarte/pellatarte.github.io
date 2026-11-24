@@ -13,9 +13,9 @@
 
 ---
 
-## ✨ À propos
+## À propos
 
-Je suis **Ella Mahieu**, étudiante en **BUT Informatique** (deuxième année).
+Je suis **Ella MAHIEU**, étudiante en **BUT Informatique** (deuxième année).
 Ce dépôt contient mon portfolio : pour chaque compétence, je présente les travaux
 qui la prouvent (TP, SAÉ, projets), une justification de mon niveau et mon auto-évaluation.
 
