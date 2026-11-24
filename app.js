@@ -65,7 +65,7 @@ function renderCompetence(c, i) {
   return `
   <section id="c${c.n}" aria-labelledby="h${c.n}">
     <div class="band"><div class="txt">
-      <p class="mini">MAHIEU Ella – BUT2 – Portfolio</p>
+      ${field("m.etiquette", "Étiquette (nom, année, portfolio)", "p", "mini")}
       <h2 id="h${c.n}">Compétence #${c.n}</h2>
       ${field(P + ".nom", "Nom de la compétence", "p", "nom")}
       <p class="pill"><b>AC</b>${field(P + ".ac", "Apprentissage critique")}</p>
@@ -83,6 +83,7 @@ function renderCompetence(c, i) {
 
 // Dessine toute la page
 function render() {
+  state.m.etiquette ??= DEFAULT_CONTENT.m.etiquette; // étiquette affichée en haut de chaque compétence
   $("#intro").innerHTML = field("m.intro", "Ta phrase d’introduction");
   $("#nav").innerHTML = state.d.map((c) => `<a href="#c${c.n}">C${c.n} · ${esc(c.court)}</a>`).join("");
   $("#app").innerHTML =
@@ -111,7 +112,7 @@ document.addEventListener("input", (e) => {
   if (EDIT && p && e.target.isContentEditable) { set(p, e.target.innerText); save(); }
 });
 // Quand on quitte un niveau, on redessine pour mettre à jour les points
-document.addEventListener("focusout", (e) => { if (EDIT && e.target.dataset?.p?.endsWith(".r")) render(); });
+document.addEventListener("focusout", (e) => { if (EDIT && /(\.r|^m\.etiquette)$/.test(e.target.dataset?.p || "")) render(); });
 // Entrée = saut de ligne seulement dans les grandes zones de texte
 document.addEventListener("keydown", (e) => {
   const t = e.target;

@@ -3,6 +3,7 @@
    Tu peux modifier ce fichier à la main, ou utiliser le mode édition
    (ouvre la page avec ?edit puis « Exporter content.json »).
 
+   m.etiquette : texte affiché en haut de chaque compétence (nom, année)
    m.intro / m.apropos : phrase d'intro (haut de page) et « À propos de moi »
    d : liste des 6 compétences. Pour chacune :
      n, court   numéro et nom court (menu)
@@ -19,6 +20,7 @@
    ========================================================================== */
 const DEFAULT_CONTENT = {
   m: {
+    etiquette: "MAHIEU Ella – BUT2 – Portfolio",   // texte en haut de chaque compétence
     intro: "Deuxième année : six compétences, mes traces et mon auto-évaluation pour chacune.",
     apropos: ""
   },
