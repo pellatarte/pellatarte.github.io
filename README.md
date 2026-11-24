@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Portfolio BUT Informatique – MAHIEU Ella" width="100%">
+<img src="./assets/banner.svg" alt="Portfolio BUT Informatique – MAHIEU Ella" width="100%">
 
 ### Mes traces, mes preuves et mon auto-évaluation pour les 6 compétences du BUT Informatique
 
-[![Voir le site](https://img.shields.io/badge/Voir%20le%20site-8B78B5?style=for-the-badge&logo=githubpages&logoColor=white)](https://pellatarte.github.io/NOM-DU-DEPOT/)
+[![Voir le site](https://img.shields.io/badge/Voir%20le%20site-8B78B5?style=for-the-badge&logo=githubpages&logoColor=white)](https://pellatarte.github.io)
 ![HTML5](https://img.shields.io/badge/HTML5-9A89C3?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-B4DADF?style=for-the-badge&logo=css3&logoColor=2E2352)
 ![JavaScript](https://img.shields.io/badge/JavaScript-65548E?style=for-the-badge&logo=javascript&logoColor=white)
